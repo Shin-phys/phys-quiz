@@ -116,10 +116,10 @@ function renderQuestion() {
     [indices[i], indices[j]] = [indices[j], indices[i]];
   }
 
-  indices.forEach(originalIndex => {
+  indices.forEach((originalIndex, displayIndex) => {
     const btn = document.createElement('button');
     btn.className = 'choice-btn';
-    btn.innerHTML = ` <span class="choice-marker"></span> ${renderMath(q.choices[originalIndex])}`;
+    btn.innerHTML = ` <span class="choice-marker">${displayIndex + 1}.</span> ${renderMath(q.choices[originalIndex])}`;
     btn.onclick = () => handleChoice(originalIndex, btn);
     btn.ondblclick = () => handleChoice(originalIndex, btn, true);
     dom.choicesArea.appendChild(btn);
