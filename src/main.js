@@ -1,5 +1,5 @@
-const { katex } = window;
 const publicBaseUrl = new URL('public/', window.location.href);
+let questionsPromise = null;
 
 const state = {
   questions: [],
@@ -47,23 +47,32 @@ const dom = {
 };
 
 async function init() {
-  await loadQuestions();
   setupCanvas();
   setupEventListeners();
+  await loadQuestions();
   // Show start screen initially
 }
 
 async function loadQuestions() {
-  try {
-    const response = await fetch(new URL('questions.json', publicBaseUrl));
-    state.questions = await response.json();
-  } catch (e) {
-    console.error('Failed to load questions', e);
-    // dom.questionText.textContent = 'Error loading questions.'; // No longer needed here, start screen handles initial display
-  }
+ if (questionsPromise) return questionsPromise;
+  questionsPromise = (async () => {
+    try {
+      const response = await fetch(new URL('questions.json', publicBaseUrl));
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
+      state.questions = await response.json();
+      return state.questions;
+    } catch (e) {
+      console.error('Failed to load questions', e);
+      state.questions = [];
+      return [];
+    }
+  })();
+  return questionsPromise;
 }
 
-function startGame(mode) {
+async function startGame(mode) {
   state.mode = mode;
   state.currentQuestionIndex = 0;
   state.answers = {};
@@ -71,6 +80,20 @@ function startGame(mode) {
   dom.startScreen.classList.add('hidden');
   dom.resultsScreen.classList.add('hidden');
   dom.modeDisplay.textContent = mode === 'practice' ? 'Practice Mode' : 'Test Mode';
+
+    if (state.questions.length === 0) {
+    await loadQuestions();
+  }
+
+  if (state.questions.length === 0) {
+    dom.questionText.textContent = '問題の読み込みに失敗しました。再読み込みしてください。';
+    dom.choicesArea.innerHTML = '';
+    dom.feedbackArea.classList.add('hidden');
+    dom.figureImg.classList.add('hidden');
+    dom.figurePlaceholder.classList.remove('hidden');
+    dom.progressBar.innerHTML = '';
+    return;
+  }
 
   renderQuestion();
   renderProgressBar();
@@ -144,6 +167,7 @@ function renderExplanation(q) {
 
 function renderMath(text) {
   if (!text) return '';
+  const { katex } = window;
   if (!katex) return text;
   return text.replace(/\$([^$]+)\$/g, (match, formula) => {
     try {
