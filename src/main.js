@@ -57,8 +57,7 @@ async function loadQuestions() {
   if (questionsPromise) return questionsPromise;
   questionsPromise = (async () => {
     const candidateUrls = [
-      new URL('questions.json', window.location.href),
-      new URL('public/questions.json', window.location.href)
+      new URL('questions.json', document.baseURI)
     ];
     for (const url of candidateUrls) {
       try {
@@ -66,15 +65,19 @@ async function loadQuestions() {
         if (!response.ok) {
           throw new Error(`HTTP ${response.status}`);
         }
+        const contentType = response.headers.get('content-type') || '';
+        if (!contentType.includes('application/json')) {
+          throw new Error(`Unexpected content type: ${contentType}`);
+        }
         state.questions = await response.json();
         state.assetsBaseUrl = new URL('.', url);
         return state.questions;
       } catch (e) {
         console.warn(`Failed to load questions from ${url}`, e);
       }
-      }
-     state.questions = [];
-     return [];
+    }
+    state.questions = [];
+    return [];
   })();
   return questionsPromise;
 }
