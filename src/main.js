@@ -1,4 +1,4 @@
-const publicBaseUrl = new URL('public/', window.location.href);
+const publicBaseUrl = new URL(import.meta.env.BASE_URL, window.location.href);
 let questionsPromise = null;
 
 const state = {
