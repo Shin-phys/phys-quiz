@@ -54,7 +54,7 @@ async function init() {
 }
 
 async function loadQuestions() {
- if (questionsPromise) return questionsPromise;
+  if (questionsPromise) return questionsPromise;
   questionsPromise = (async () => {
     const candidateUrls = [
       new URL('questions.json', window.location.href),
