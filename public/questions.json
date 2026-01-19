@@ -1,21 +1,322 @@
 [
-    {
-        "id": "phys_001",
-        "tags": [
-            "力学",
-            "摩擦"
-        ],
-        "prompt": "傾角 $\\theta$ の斜面で静止する質量 $m$ の物体に働く摩擦力 $f$ は？",
-        "figure": "assets/img/p001.png",
-        "choices": [
-            "$mg \\sin \\theta$",
-            "$mg \\cos \\theta$",
-            "$\\mu mg \\cos \\theta$",
-            "$0$"
-        ],
-        "correctIndex": 0,
-        "answerLatex": "$f = mg \\sin \\theta$",
-        "point": "静止摩擦力は、滑らせようとする力（重力の成分）とつり合っています。",
-        "figure_instruction": "斜面、物体、重力の分解点線、角度thetaを明示すること"
-    }
+  {
+    "id": "001",
+    "tags": [
+      "物理基礎",
+      "力学的エネルギー"
+    ],
+    "prompt": "質量 $m[\\text{kg}]$、速度 $v[\\text{m/s}]$、重力加速度 $g [\\text{m/s}^2]$、ばね定数 $k[\\text{N/m}]$ とする。力学的エネルギー $E$ の定義式を書け。",
+    "figure": "none",
+    "choice_0": "$E = \\frac{1}{2}mv^2 + mgh + \\frac{1}{2}kx^2$",
+    "choice_1": "$E = mv^2 + mgh + kx^2$",
+    "choice_2": "$E = \\frac{1}{2}mv^2 + mgh + kx$",
+    "choice_3": "$E = \\frac{1}{2}mv^2 + mg + \\frac{1}{2}kx^2$",
+    "correctIndex": 0,
+    "answerLatex": "E = \\frac{1}{2}mv^2 + mgh + \\frac{1}{2}kx^2",
+    "point": 5
+  },
+  {
+    "id": "002",
+    "tags": [
+      "物理基礎",
+      "力学的エネルギー"
+    ],
+    "prompt": "ばねの伸び $x [\\text{m}]$ で速さ $v[\\text{m/s}]$ の物体が持つ力学的エネルギーの式を書け。",
+    "figure": "none",
+    "choice_0": "$\\frac{1}{2}mv^2 + \\frac{1}{2}kx^2$",
+    "choice_1": "$mv^2 + kx^2$",
+    "choice_2": "$\\frac{1}{2}mv^2 + \\frac{1}{2}kx$",
+    "choice_3": "$\\frac{1}{2}mv^2 + kx^2$",
+    "correctIndex": 0,
+    "answerLatex": "\\frac{1}{2}mv^2 + \\frac{1}{2}kx^2",
+    "point": 5
+  },
+  {
+    "id": "003",
+    "tags": [
+      "物理基礎",
+      "力学的エネルギー"
+    ],
+    "prompt": "速さ $v[\\text{m/s}]$ の物体が持つ運動エネルギーの式を書け。",
+    "figure": "none",
+    "choice_0": "$\\frac{1}{2}mv^2$",
+    "choice_1": "$mv^2$",
+    "choice_2": "$\\frac{1}{2}mv$",
+    "choice_3": "$\\frac{1}{2}m^2v^2$",
+    "correctIndex": 0,
+    "answerLatex": "\\frac{1}{2}mv^2",
+    "point": 5
+  },
+  {
+    "id": "004",
+    "tags": [
+      "物理基礎",
+      "力学的エネルギー"
+    ],
+    "prompt": "高さ $h[\\text{m}]$、速さ $v[\\text{m/s}]$ の物体が持つ力学的エネルギーの式を書け。",
+    "figure": "none",
+    "choice_0": "$\\frac{1}{2}mv^2 + mgh$",
+    "choice_1": "$mv^2 + mgh$",
+    "choice_2": "$\\frac{1}{2}mv^2 + mg$",
+    "choice_3": "$\\frac{1}{2}mv^2 - mgh$",
+    "correctIndex": 0,
+    "answerLatex": "\\frac{1}{2}mv^2 + mgh",
+    "point": 5
+  },
+  {
+    "id": "005",
+    "tags": [
+      "物理基礎",
+      "力学的エネルギー"
+    ],
+    "prompt": "速さ $5.0\\text{ m/s}$ で進む質量 $2.0\\text{ kg}$ の物体に対して、$24\\text{ J}$ の仕事をしたところ、速さは $v\\text{ [m/s]}$ となった。仕事とエネルギーの関係を表す式を書け。",
+    "figure": "none",
+    "choice_0": "$\\frac{1}{2} \\cdot 2.0 \\cdot 5.0^2 + 24 = \\frac{1}{2} \\cdot 2.0 \\cdot v^2$",
+    "choice_1": "$\\frac{1}{2} \\cdot 2.0 \\cdot 5.0^2 - 24 = \\frac{1}{2} \\cdot 2.0 \\cdot v^2$",
+    "choice_2": "$\\frac{1}{2} \\cdot 2.0 \\cdot 5.0 + 24 = \\frac{1}{2} \\cdot 2.0 \\cdot v^2$",
+    "choice_3": "$\\frac{1}{2} \\cdot 2.0 \\cdot 5.0^2 + 24 = 2.0 \\cdot v^2$",
+    "correctIndex": 0,
+    "answerLatex": "\\frac{1}{2} \\cdot 2.0 \\cdot 5.0^2 + 24 = \\frac{1}{2} \\cdot 2.0 \\cdot v^2",
+    "point": 5
+  },
+  {
+    "id": "006",
+    "tags": [
+      "物理基礎",
+      "力学的エネルギー"
+    ],
+    "prompt": "ばね定数 $90\\text{ N/m}$ のばねを $0.20\\text{ m}$ 縮めた位置からはなし、あらい面で停止した。動摩擦力の仕事を $W$ としたとき、エネルギーの変化を表す式を書け。",
+    "figure": "p006.png",
+    "choice_0": "$\\frac{1}{2} \\cdot 90 \\cdot 0.20^2 + W = 0$",
+    "choice_1": "$\\frac{1}{2} \\cdot 90 \\cdot 0.20^2 - W = 0$",
+    "choice_2": "$90 \\cdot 0.20^2 + W = 0$",
+    "choice_3": "$\\frac{1}{2} \\cdot 90 \\cdot 0.20 + W = 0$",
+    "correctIndex": 0,
+    "answerLatex": "\\frac{1}{2} \\cdot 90 \\cdot 0.20^2 + W = 0",
+    "point": 5
+  },
+  {
+    "id": "007",
+    "tags": [
+      "物理基礎",
+      "力学的エネルギー"
+    ],
+    "prompt": "速さ $8.0\\text{ m/s}$、質量 $2.5\\text{ kg}$ の物体があらい面を通過し、高さ $2.0\\text{ m}$ の最高点まで達した。動摩擦力の仕事を $W$ としたときのエネルギーの式を書け。",
+    "figure": "p007.png",
+    "choice_0": "$\\frac{1}{2} \\cdot 2.5 \\cdot 8.0^2 + W = 2.5 \\cdot 9.8 \\cdot 2.0$",
+    "choice_1": "$\\frac{1}{2} \\cdot 2.5 \\cdot 8.0^2 - W = 2.5 \\cdot 9.8 \\cdot 2.0$",
+    "choice_2": "$\\frac{1}{2} \\cdot 2.5 \\cdot 8.0 + W = 2.5 \\cdot 9.8 \\cdot 2.0$",
+    "choice_3": "$\\frac{1}{2} \\cdot 2.5 \\cdot 8.0^2 + W = \\frac{1}{2} \\cdot 2.5 \\cdot 9.8 \\cdot 2.0$",
+    "correctIndex": 0,
+    "answerLatex": "\\frac{1}{2} \\cdot 2.5 \\cdot 8.0^2 + W = 2.5 \\cdot 9.8 \\cdot 2.0",
+    "point": 5
+  },
+  {
+    "id": "008",
+    "tags": [
+      "物理基礎",
+      "力学的エネルギー"
+    ],
+    "prompt": "高さ $h$ の点Aから自由落下させ、地上の点Bに速さ $v_1$ で衝突した。点Aと点Bの間での力学的エネルギー保存則の式を書け。",
+    "figure": "p008.png",
+    "choice_0": "$mgh = \\frac{1}{2}mv_1^2$",
+    "choice_1": "$mgh = mv_1^2$",
+    "choice_2": "$mg = \\frac{1}{2}mv_1^2$",
+    "choice_3": "$mgh + \\frac{1}{2}mv_1^2 = 0$",
+    "correctIndex": 0,
+    "answerLatex": "mgh = \\frac{1}{2}mv_1^2",
+    "point": 5
+  },
+  {
+    "id": "009",
+    "tags": [
+      "物理基礎",
+      "力学的エネルギー"
+    ],
+    "prompt": "高さ $h$ の点Aから初速度 $v_0$ で投げ下ろし、地上の点Bに速さ $v_2$ で衝突した。点Aと点Bの間での力学的エネルギー保存則の式を書け。",
+    "figure": "p009.png",
+    "choice_0": "$mgh + \\frac{1}{2}mv_0^2 = \\frac{1}{2}mv_2^2$",
+    "choice_1": "$mgh - \\frac{1}{2}mv_0^2 = \\frac{1}{2}mv_2^2$",
+    "choice_2": "$mgh + \\frac{1}{2}mv_0^2 = mv_2^2$",
+    "choice_3": "$mg + \\frac{1}{2}mv_0^2 = \\frac{1}{2}mv_2^2$",
+    "correctIndex": 0,
+    "answerLatex": "mgh + \\frac{1}{2}mv_0^2 = \\frac{1}{2}mv_2^2",
+    "point": 5
+  },
+  {
+    "id": "010",
+    "tags": [
+      "物理基礎",
+      "力学的エネルギー"
+    ],
+    "prompt": "地上の点Aから初速度 $v_0$ で投げ上げ、最高点Cの高さが $H$ であった。点Aと点Cの間での力学的エネルギー保存則の式を書け。",
+    "figure": "p010.png",
+    "choice_0": "$\\frac{1}{2}mv_0^2 = mgH$",
+    "choice_1": "$\\frac{1}{2}mv_0^2 = \\frac{1}{2}mgH$",
+    "choice_2": "$mv_0^2 = mgH$",
+    "choice_3": "$\\frac{1}{2}mv_0^2 + mgH = 0$",
+    "correctIndex": 0,
+    "answerLatex": "\\frac{1}{2}mv_0^2 = mgH",
+    "point": 5
+  },
+  {
+    "id": "011",
+    "tags": [
+      "物理基礎",
+      "力学的エネルギー"
+    ],
+    "prompt": "点Aから初速度 $v_0$ で投げ上げ、再び点Aに戻ったときの速さが $v_2$ であった。この間の力学的エネルギー保存則の式を書け。",
+    "figure": "p011.png",
+    "choice_0": "$\\frac{1}{2}mv_0^2 = \\frac{1}{2}mv_2^2$",
+    "choice_1": "$\\frac{1}{2}mv_0^2 = mv_2^2$",
+    "choice_2": "$\\frac{1}{2}mv_0 = \\frac{1}{2}mv_2$",
+    "choice_3": "$\\frac{1}{2}mv_0^2 + \\frac{1}{2}mv_2^2 = 0$",
+    "correctIndex": 0,
+    "answerLatex": "\\frac{1}{2}mv_0^2 = \\frac{1}{2}mv_2^2",
+    "point": 5
+  },
+  {
+    "id": "012",
+    "tags": [
+      "物理基礎",
+      "力学的エネルギー"
+    ],
+    "prompt": "斜面上の高さ $0.20\\text{ m}$ の点Aから初速度 $0.70\\text{ m/s}$ ですべり下り、点Bを速さ $v$ で通過した。点Aと点Bでの保存則の式を書け。",
+    "figure": "p012.png",
+    "choice_0": "$m \\cdot 9.8 \\cdot 0.20 + \\frac{1}{2}m \\cdot 0.70^2 = \\frac{1}{2}mv^2$",
+    "choice_1": "$m \\cdot 9.8 \\cdot 0.20 - \\frac{1}{2}m \\cdot 0.70^2 = \\frac{1}{2}mv^2$",
+    "choice_2": "$m \\cdot 9.8 \\cdot 0.20 + \\frac{1}{2}m \\cdot 0.70^2 = mv^2$",
+    "choice_3": "$m \\cdot 9.8 + \\frac{1}{2}m \\cdot 0.70^2 = \\frac{1}{2}mv^2$",
+    "correctIndex": 0,
+    "answerLatex": "m \\cdot 9.8 \\cdot 0.20 + \\frac{1}{2}m \\cdot 0.70^2 = \\frac{1}{2}mv^2",
+    "point": 5
+  },
+  {
+    "id": "013",
+    "tags": [
+      "物理基礎",
+      "力学的エネルギー"
+    ],
+    "prompt": "長さ $0.80\\text{ m}$ の糸の先に物体を吊るし、 $60^\\circ$ の点Aからはなした。最下点Bでの速さを $v$ とするときの保存則の式を書け。",
+    "figure": "p013.png",
+    "choice_0": "$mg \\cdot 0.80(1 - \\cos 60^\\circ) = \\frac{1}{2}mv^2$",
+    "choice_1": "$mg \\cdot 0.80(1 + \\cos 60^\\circ) = \\frac{1}{2}mv^2$",
+    "choice_2": "$mg \\cdot 0.80(1 - \\cos 60^\\circ) = mv^2$",
+    "choice_3": "$mg \\cdot 0.80(1 - \\sin 60^\\circ) = \\frac{1}{2}mv^2$",
+    "correctIndex": 0,
+    "answerLatex": "mg \\cdot 0.80(1 - \\cos 60^\\circ) = \\frac{1}{2}mv^2",
+    "point": 5
+  },
+  {
+    "id": "014",
+    "tags": [
+      "物理基礎",
+      "力学的エネルギー"
+    ],
+    "prompt": "ばねの伸び $l_0$ の点Aから静かにはなし、自然の長さの点Bを速さ $v_B$ で通過した。点Aと点Bでの保存則の式を書け。",
+    "figure": "p014.png",
+    "choice_0": "$\\frac{1}{2}kl_0^2 = \\frac{1}{2}mv_B^2$",
+    "choice_1": "$\\frac{1}{2}kl_0^2 = mv_B^2$",
+    "choice_2": "$kl_0^2 = \\frac{1}{2}mv_B^2$",
+    "choice_3": "$\\frac{1}{2}kl_0 = \\frac{1}{2}mv_B^2$",
+    "correctIndex": 0,
+    "answerLatex": "\\frac{1}{2}kl_0^2 = \\frac{1}{2}mv_B^2",
+    "point": 5
+  },
+  {
+    "id": "015",
+    "tags": [
+      "物理基礎",
+      "力学的エネルギー"
+    ],
+    "prompt": "ばねの伸び $l_0$ の点Aからはなし、伸びが $l_1$ となる点Cを速さ $v_C$ で通過した。点Aと点Cでの保存則の式を書け。",
+    "figure": "p015.png",
+    "choice_0": "$\\frac{1}{2}kl_0^2 = \\frac{1}{2}mv_C^2 + \\frac{1}{2}kl_1^2$",
+    "choice_1": "$\\frac{1}{2}kl_0^2 = \\frac{1}{2}mv_C^2 - \\frac{1}{2}kl_1^2$",
+    "choice_2": "$\\frac{1}{2}kl_0^2 = mv_C^2 + \\frac{1}{2}kl_1^2$",
+    "choice_3": "$\\frac{1}{2}kl_0 = \\frac{1}{2}mv_C^2 + \\frac{1}{2}kl_1^2$",
+    "correctIndex": 0,
+    "answerLatex": "\\frac{1}{2}kl_0^2 = \\frac{1}{2}mv_C^2 + \\frac{1}{2}kl_1^2",
+    "point": 5
+  },
+  {
+    "id": "016",
+    "tags": [
+      "物理基礎",
+      "力学的エネルギー"
+    ],
+    "prompt": "鉛直ばね。自然の長さの点Bからはなし、伸び $a$ のつりあいの点Aを速さ $v_A$ で通過した。Bを位置エネルギーの基準として式を書け。",
+    "figure": "p016.png",
+    "choice_0": "$0 = \\frac{1}{2}mv_A^2 + \\frac{1}{2}ka^2 - mga$",
+    "choice_1": "$0 = \\frac{1}{2}mv_A^2 + \\frac{1}{2}ka^2 + mga$",
+    "choice_2": "$0 = mv_A^2 + \\frac{1}{2}ka^2 - mga$",
+    "choice_3": "$0 = \\frac{1}{2}mv_A^2 + \\frac{1}{2}ka - mga$",
+    "correctIndex": 0,
+    "answerLatex": "0 = \\frac{1}{2}mv_A^2 + \\frac{1}{2}ka^2 - mga",
+    "point": 5
+  },
+  {
+    "id": "017",
+    "tags": [
+      "物理基礎",
+      "力学的エネルギー"
+    ],
+    "prompt": "鉛直ばね。自然の長さの点Bからはなし、最下点C（Bから $h$ 下方）に達した。Bを位置エネルギーの基準として式を書け。",
+    "figure": "p017.png",
+    "choice_0": "$0 = \\frac{1}{2}kh^2 - mgh$",
+    "choice_1": "$0 = \\frac{1}{2}kh^2 + mgh$",
+    "choice_2": "$0 = kh^2 - mgh$",
+    "choice_3": "$0 = \\frac{1}{2}kh - mgh$",
+    "correctIndex": 0,
+    "answerLatex": "0 = \\frac{1}{2}kh^2 - mgh",
+    "point": 5
+  },
+  {
+    "id": "018",
+    "tags": [
+      "物理基礎",
+      "力学的エネルギー"
+    ],
+    "prompt": "ばね定数 $1.2 \\times 10^2\\text{ N/m}$、質量 $0.30\\text{ kg}$、縮み $0.10\\text{ m}$ から放し、ばねから離れた時の速さを $v$ とする。保存則の式を書け。",
+    "figure": "p018.png",
+    "choice_0": "$\\frac{1}{2} \\cdot 1.2 \\cdot 10^2 \\cdot 0.10^2 = \\frac{1}{2} \\cdot 0.30 \\cdot v^2$",
+    "choice_1": "$1.2 \\cdot 10^2 \\cdot 0.10^2 = \\frac{1}{2} \\cdot 0.30 \\cdot v^2$",
+    "choice_2": "$\\frac{1}{2} \\cdot 1.2 \\cdot 10^2 \\cdot 0.10^2 = 0.30 \\cdot v^2$",
+    "choice_3": "$\\frac{1}{2} \\cdot 1.2 \\cdot 10^2 \\cdot 0.10 = \\frac{1}{2} \\cdot 0.30 \\cdot v^2$",
+    "correctIndex": 0,
+    "answerLatex": "\\frac{1}{2} \\cdot 1.2 \\cdot 10^2 \\cdot 0.10^2 = \\frac{1}{2} \\cdot 0.30 \\cdot v^2",
+    "point": 5
+  },
+  {
+    "id": "019",
+    "tags": [
+      "物理基礎",
+      "力学的エネルギー"
+    ],
+    "prompt": "速さ $3.0\\text{ m/s}$、質量 $2.0\\text{ kg}$ の物体がばね定数 $4.5 \\times 10^2\\text{ N/m}$ のばねに当たり、最大 $x$ 縮んだ。保存則の式を書け。",
+    "figure": "p019.png",
+    "choice_0": "$\\frac{1}{2} \\cdot 2.0 \\cdot 3.0^2 = \\frac{1}{2} \\cdot 4.5 \\cdot 10^2 \\cdot x^2$",
+    "choice_1": "$\\frac{1}{2} \\cdot 2.0 \\cdot 3.0^2 = 4.5 \\cdot 10^2 \\cdot x^2$",
+    "choice_2": "$2.0 \\cdot 3.0^2 = \\frac{1}{2} \\cdot 4.5 \\cdot 10^2 \\cdot x^2$",
+    "choice_3": "$\\frac{1}{2} \\cdot 2.0 \\cdot 3.0 = \\frac{1}{2} \\cdot 4.5 \\cdot 10^2 \\cdot x^2$",
+    "correctIndex": 0,
+    "answerLatex": "\\frac{1}{2} \\cdot 2.0 \\cdot 3.0^2 = \\frac{1}{2} \\cdot 4.5 \\cdot 10^2 \\cdot x^2",
+    "point": 5
+  },
+  {
+    "id": "020",
+    "tags": [
+      "物理基礎",
+      "力学的エネルギー"
+    ],
+    "prompt": "質量 $m$ のPと高さ $h$ にある質量 $M$ のQを糸でつなぎ放した。Qが床に速さ $v$ で衝突する直前の保存則の式を書け。",
+    "figure": "p020.png",
+    "choice_0": "$Mgh = \\frac{1}{2}(M+m)v^2$",
+    "choice_1": "$Mgh = \\frac{1}{2}(M-m)v^2$",
+    "choice_2": "$Mgh = (M+m)v^2$",
+    "choice_3": "$mgh = \\frac{1}{2}(M+m)v^2$",
+    "correctIndex": 0,
+    "answerLatex": "Mgh = \\frac{1}{2}(M+m)v^2",
+    "point": 5
+  }
 ]
